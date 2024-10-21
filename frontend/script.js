@@ -19,12 +19,12 @@ document.getElementById('sendButton').addEventListener('click', function() {
 
             if (xmas) {
                 if (sust) {
-                    postQueryBackend('http://localhost:8000/query/compare/', input);
+                    postQueryBackend('http://' + window.location.hostname +':8000/query/compare/', input);
                 } else {
-                    postQueryBackend('http://localhost:8000/query/christmas/', input);
+                    postQueryBackend('http://' + window.location.hostname +':8000/query/christmas/', input);
                 }
             } else {
-                postQueryBackend('http://localhost:8000/query/sustainability/', input);
+                postQueryBackend('http://' + window.location.hostname +':8000/query/sustainability/', input);
             }
         }
     }
@@ -33,7 +33,7 @@ document.getElementById('sendButton').addEventListener('click', function() {
 async function postQueryBackend(url, message) {
     showLoader();
 
-    const response = await fetch('http://localhost:8000/query/christmas/', {
+    const response = await fetch(url, {
         method: 'POST',
         keepalive: true,
         headers: {
