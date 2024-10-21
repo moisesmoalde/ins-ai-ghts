@@ -16,6 +16,7 @@ Ensure you have the following before starting the deployment:
 - **SSH Access** to the EC2 instance
 - **Git** installed on the EC2 instance
 - **Python3** and **pip** installed on the EC2 instance
+- Security group activated on the EC2 that allows **all TCP** connections (origin 0.0.0.0/0) to ports **3000** and **8000**
 
 ## Steps to Deploy
 
@@ -42,9 +43,19 @@ ollama pull llama3.2
 
 ### 3. Clone the repository and install requirements
 
+Clone the repository:
 ```bash
 git clone https://github.com/moisesmoalde/ins-ai-ghts.git
 cd ins-ai-ghts
+```
+
+Create a virtual environment, activate it and install requirements:
+```bash
+python3 -m venv .venv
+echo "*" > .venv/.gitignore
+```
+```bash
+source .venv/bin/activate
 pip install -r backend/requirements.txt
 ```
 
@@ -62,4 +73,4 @@ python3 main.py
 
 ### 5. Open an explorer and connect to your frontend
 
-[your-instance-ip:3000]
+[http://your-instance-ip:3000]
