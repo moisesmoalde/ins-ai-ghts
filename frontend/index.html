@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insAIghts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>ins[AI]ghts</h1>
+</header>
+
+<div class="container">
+    <div class="sidebar">
+        <h2 class="menu-title">Datasets</h2>
+            <div class="menu-item">
+                <label for="switch1" class="switch">
+                    <input type="checkbox" id="switch1" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="label-text">Christmas <sup>[C]</sup></span>
+            </div>
+            <p></p>
+            <div class="menu-item">
+                <label for="switch2" class="switch">
+                    <input type="checkbox" id="switch2">
+                    <span class="slider"></span>
+                </label>
+                <span class="label-text">Sustainability <sup>[S]</sup></span>
+            </div>
+    </div>
+    <div class="main-content">
+        <div class="chat-window" id="chatWindow">
+            <!-- Chat content will be rendered here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="e.g., 'tell me about data based on gender'" />
+            <button id="sendButton">Run</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
